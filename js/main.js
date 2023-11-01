@@ -1,20 +1,28 @@
-const listaMail = ['johnsnow@gmail.com' , 'frankzappa@gmail.com' , 'rinogaetano@gmail.com' , 'pippobaudo@gmail.com'];
-const inputMail = prompt('Inserisci la tua mail');
-let mail = false;
+const listaMail = ["johnsnow@gmail.com", "pippobaudo@gmail.com", "frankzappa@gmail.com", "rinogaetano@gmail.com"];
+const inputMail = document.getElementById("inputMail");
+const btn = document.getElementById("inputButton");
 
-for (let i = 0; i < listaMail.length; i++) {
-  const lista = listaMail[i];
-  
-  if (lista == inputMail) {
-    mail = true;
-  }
-}
+btn.addEventListener("click", function(){
+    
+    let user = false;
 
-if (mail == true){
-  alert('Bentornato');
-}else{
-  alert('Accesso Negato');
-}
+    for (let i = 0; i < listaMail.length; i++) {
+        let mail = listaMail[i];
 
+        if (inputMail.value == mail) {
+            user = true;
+            console.log("mail corretta")
+            
+        } else {
+            console.log("nessuna mail")
+        }
+        
+    }
 
+    if(user == true){
+        document.getElementById("result").innerHTML = "Accesso consentito";
+    } else {
+        document.getElementById("result").innerHTML = "Accesso non consentito";
+    }
 
+});
