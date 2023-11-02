@@ -11,15 +11,11 @@ btn.addEventListener("click", function(){
 
         if (inputMail.value == mail) {
             user = true;
-            console.log("mail corretta")
-            
-        } else {
-            console.log("nessuna mail")
-        }
-        
+            console.log("mail corretta")            
+        }        
     }
 
-    if(user == true){
+    if(user) {
         document.getElementById("result").innerHTML = "Accesso consentito";
     } else {
         document.getElementById("result").innerHTML = "Accesso non consentito";
